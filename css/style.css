@@ -1,0 +1,221 @@
+html {
+  background-color: #c0c0c0;
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  font-family: Tahoma, sans-serif;
+  font-size: 11pt;
+  background: #c0c0c0;
+  color: #303030;
+  margin: 0;
+}
+
+nav {
+  height: 40px;
+  background: #343434;
+  border: #000 solid 1px;
+  position: fixed;
+  width: 100%;
+  top: 50px;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0 0 0 -12px;
+  padding: 0px;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  padding: 10px 12px 13px 12px;
+
+  display: block;
+  line-height: 40px;
+  font: 95% Tahoma, sans-serif;
+  color: #ddd;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+header {
+  background: #000000;
+  color: #ffffff;
+  padding-top: 1px;
+  margin-bottom: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+footer {
+  height: 30px;
+  width: 100%;
+  background: #343434;
+  border: #000 solid 1px;
+  color: #eee;
+  text-align: left;
+  font-size: 95%;
+  padding-top: 13px;
+  vertical-align: middle;
+  margin-top: 20px;
+  bottom: 0;
+}
+
+.main {
+  min-height: 400px;
+  max-width: 840px;
+  margin: 110px auto 20px auto;
+}
+
+.center {
+  max-width: 840px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cards,
+.card2s {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  min-height: 400px;
+  max-width: 1100px;
+  margin: 110px auto 20px auto;
+}
+
+/* Media query for smaller screens */
+@media (min-width: 810px) {
+  .cards,
+  .card2s {
+    grid-template-columns: repeat(3, 1fr);
+    width: 800px;
+  }
+}
+
+/* Media query for smaller screens */
+@media (min-width: 1100px) {
+  .cards,
+  .card2s {
+    grid-template-columns: repeat(4, 1fr);
+    width: 1060px;
+  }
+}
+
+.card {
+  padding: 8px;
+  width: 250px;
+  border: 2px solid #c0c0c0;
+  border-radius: 12px;
+  background-color: #fff;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.tag {
+  padding: 4px 8px;
+  border: 1px solid #808080;
+  background-color: #a0a0a0;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #e8e6e7;
+  margin: 2px 2px 2px 2px;
+}
+
+.card:hover {
+  background-color: #69c1e3;
+}
+
+.card img {
+  object-fit: cover;
+  width: 250px;
+  height: 320px;
+  border-radius: 12px;
+}
+
+.card__details {
+  margin: 3px;
+}
+
+.card__details .name {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px auto 0px auto;
+}
+
+.card__details .content {
+  font-size: 14px;
+  min-height: 30px;
+  color: #7f8c9b;
+  margin: 10px auto 5px auto;
+}
+
+.button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 12px;
+
+  font-weight: 500;
+  color: #0077ff;
+  background-color: #e0efff;
+  width: 70px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+
+  cursor: pointer;
+}
+
+.buttonLoad {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+
+  font-weight: 600;
+  color: #0077ff;
+  background-color: #e0efff;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  cursor: pointer;
+}
+.buttonLoad:hover {
+  background-color: #ffffff;
+}
+
+textarea {
+  width: 400px; /* Set the width of the textarea */
+  height: 150px; /* Set the height of the textarea */
+  margin: 0 20px;
+}
+
+.control-group {
+  margin: auto 20px auto 20px;
+  width: 450px;
+}
+
+.error {
+  color: red;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}

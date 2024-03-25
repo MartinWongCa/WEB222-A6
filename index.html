@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Yu Lung Wong</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="center">
+        <h2>WEB222 - Assignment 6</h2>
+      </div>
+    </header>
+
+    <nav>
+      <div class="center">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product_register.html">Product Registration</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="honesty.html">Honesty</a></li>
+          <li><a href="reflection.html">Reflection</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="cards" id="cardId"></div>
+
+    <div class="buttonLoad" id="buttonId">Load More</div>
+
+    <script>
+      let cardIndex = 0;
+
+      let card_tbl = [
+        {
+          jpg: 'arleen-wiese',
+          tag1: 'Animals Images',
+          tag2: 'Wildlife',
+          name: 'Lion',
+          content: 'lion lying on ground',
+          url: 'https://unsplash.com/photos/lion-lying-on-ground-2vbhN2Yjb3A'
+        },
+        {
+          jpg: 'chuttersnap',
+          tag1: 'Animals Images',
+          tag2: 'Birds Images',
+          name: 'Parrot',
+          content: 'red blue and yellow macaw',
+          url: 'https://unsplash.com/photos/red-blue-and-yellow-macaw-v6fDUIreHds'
+        },
+        {
+          jpg: 'daniel-diesenreither',
+          tag1: 'Animals Images',
+          tag2: 'Bear Images',
+          name: 'Bear',
+          content: 'a bee sitting on top of a white flower',
+          url: 'https://unsplash.com/photos/brown-bear-on-green-grass-during-daytime-z4yzSsH5EAo'
+        },
+        {
+          jpg: 'guille-pozzi',
+          tag1: 'Animals Images',
+          tag2: 'Fox Images',
+          name: 'Fox',
+          content: 'red fox on concrete road',
+          url: 'https://unsplash.com/photos/red-fox-on-concrete-road--rQFG2huv8s'
+        },
+        {
+          jpg: 'jozsef-szabo',
+          tag1: 'Animals Images',
+          tag2: 'Close-Up',
+          name: 'Bee',
+          content: 'a bee sitting on top of a white flower',
+          url: 'https://unsplash.com/photos/a-bee-sitting-on-top-of-a-white-flower-of8xwEQdGQA'
+        },
+        {
+          jpg: 'kristin-o-karlsen',
+          tag1: 'Animals Images',
+          tag2: 'Horse Images',
+          name: 'White Horse',
+          content: 'two white horses standing next to each other',
+          url: 'https://unsplash.com/photos/two-white-horses-standing-next-to-each-other-CzXDcgGeWKQ'
+        },
+        {
+          jpg: 'martin-schmidli',
+          tag1: 'Animals Images',
+          tag2: 'Sheep',
+          name: 'White Sheep',
+          content: 'white sheep on field',
+          url: 'https://unsplash.com/photos/white-sheep-on-field-qg8ihPPQkKo'
+        },
+        {
+          jpg: 'mathias-reding',
+          tag1: 'Animals Images',
+          tag2: 'Horse Images',
+          name: 'Brown Horse',
+          content: 'brown horse with white spot on forehead photo',
+          url: 'https://unsplash.com/photos/brown-horse-with-white-spot-on-forehead-photo-Y_1gFc2ieto'
+        },
+        {
+          jpg: 'matthew-pla',
+          tag1: 'Animals Images',
+          tag2: 'Elephant Images',
+          name: 'Elephant',
+          content: "closeup photography of elephant's head",
+          url: 'https://unsplash.com/photos/closeup-photography-of-elephants-head-WGoPc8NWRq4'
+        },
+        {
+          jpg: 'praewthida',
+          tag1: 'Animals Images',
+          tag2: 'Birds Images',
+          name: 'Waterfowl',
+          content: 'white bird close-up photography',
+          url: 'https://unsplash.com/photos/white-bird-close-up-photography-pp398AbaM8k'
+        },
+        {
+          jpg: 'virginia',
+          tag1: 'Animals Images',
+          tag2: 'Birds Images',
+          name: 'Virginia',
+          content: 'Brown rooster',
+          url: 'https://unsplash.com/photos/brown-rooster--xOtq-3f3i8'
+        },
+        {
+          jpg: 'stephanie-leblanc',
+          tag1: 'Animals Images',
+          tag2: 'Frog Images',
+          name: 'Frog',
+          content: 'green frog on red post',
+          url: 'https://unsplash.com/photos/green-frog-on-red-post-SVwOposMxHY'
+        }
+      ];
+
+      function loadFourCards() {
+        let cardContainer = document.getElementById('cardId');
+
+        for (let i = 0; i < 4; i++) {
+          let cardClass = document.createElement('div');
+          cardClass.setAttribute('class', 'card');
+
+          let imgObj = document.createElement('img');
+          imgObj.setAttribute('src', 'img\\' + card_tbl[cardIndex].jpg + '.jpg');
+          imgObj.setAttribute('alt', card_tbl[cardIndex].jpg + '.jpg');
+          cardClass.appendChild(imgObj);
+
+          let cardDObj = document.createElement('div');
+          cardDObj.setAttribute('class', 'card__details');
+
+          let tag1Obj = document.createElement('span');
+          tag1Obj.setAttribute('class', 'tag');
+          tag1Obj.textContent = card_tbl[cardIndex].tag1;
+          cardDObj.appendChild(tag1Obj);
+
+          let tag2Obj = document.createElement('span');
+          tag2Obj.setAttribute('class', 'tag');
+          tag2Obj.textContent = card_tbl[cardIndex].tag2;
+          cardDObj.appendChild(tag2Obj);
+
+          let nameObj = document.createElement('div');
+          nameObj.setAttribute('class', 'name');
+          nameObj.textContent = card_tbl[cardIndex].name;
+          cardDObj.appendChild(nameObj);
+
+          let contentObj = document.createElement('div');
+          contentObj.setAttribute('class', 'content');
+          contentObj.textContent = card_tbl[cardIndex].content;
+          cardDObj.appendChild(contentObj);
+
+          let linkObj = document.createElement('a');
+          linkObj.setAttribute('href', card_tbl[cardIndex].url);
+          linkObj.setAttribute('class', 'button');
+          linkObj.textContent = 'Read more';
+          cardDObj.appendChild(linkObj);
+
+          cardClass.appendChild(cardDObj);
+
+          cardContainer.appendChild(cardClass);
+
+          cardIndex++;
+          cardIndex %= 12;
+        }
+      }
+
+      window.onload = function () {
+        loadFourCards();
+        loadFourCards();
+        loadFourCards();
+      };
+
+      document.getElementById('buttonId').addEventListener('click', function () {
+        loadFourCards();
+      });
+    </script>
+
+    <footer>
+      <div class="center">&copy; 2024 Student Name : Yu Lung Wong</div>
+    </footer>
+  </body>
+</html>
